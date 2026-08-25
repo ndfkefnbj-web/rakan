@@ -5,7 +5,7 @@ workflows:
     environment:
       ios_signing:
         distribution_type: development
-        bundle_identifier: com.ndfkefnbj.ghostexecutor
+        bundle_identifier: com.example.ghost
       vars:
         XCODE_PROJECT: "GhostExecutor.xcodeproj"
         XCODE_SCHEME: "GhostExecutor"
