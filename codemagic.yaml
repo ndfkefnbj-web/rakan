@@ -6,9 +6,6 @@ workflows:
       ios_signing:
         distribution_type: development
         bundle_identifier: com.example.ghost
-        apple_id:
-          username: robl3y@icloud.com
-          password: AsAs@151415141513-
       vars:
         XCODE_PROJECT: "GhostExecutor.xcodeproj"
         XCODE_SCHEME: "GhostExecutor"
