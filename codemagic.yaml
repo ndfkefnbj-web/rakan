@@ -1,0 +1,21 @@
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    max_build_duration: 30
+    environment:
+      ios_signing:
+        distribution_type: development
+        bundle_identifier: com.ndfkefnbj.ghostexecutor
+      vars:
+        XCODE_WORKSPACE: "GhostExecutor.xcodeproj"
+        XCODE_SCHEME: "GhostExecutor"
+      xcode: latest
+    scripts:
+      - name: Install dependencies
+        script: |
+          echo "Installing dependencies..."
+      - name: Build iOS app
+        script: |
+          xcodebuild -project "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -sdk iphoneos -configuration Release archive -archivePath "$CM_BUILD_DIR/archive.xcarchive"
+    artifacts:
+      - $CM_BUILD_DIR/archive.xcarchive/products/Applications/*.ipa
